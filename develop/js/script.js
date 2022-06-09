@@ -33,7 +33,6 @@ let timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 let planEvent = localStorage.getItem("input");
 
-
 // functions for above selectors
 function displayCurrentDay() {
     currentDayEl.text(today.format('dddd, MMMM Do'));
@@ -41,8 +40,8 @@ function displayCurrentDay() {
 
 function timeBlockColorDisplay() {
     for (let i = 0; i < timeArray.length; i++) {
-        let currentTextEl = $("#" + timeArray[i]);
-        
+        let currentTextEl = $("#hour" + timeArray[i] + "Plan");
+
         if (currentHour > timeArray[i]) {
             currentTextEl.addClass("past");
         } else if (currentHour === timeArray[i]) {
@@ -53,11 +52,23 @@ function timeBlockColorDisplay() {
     }
 }
 
-function saveContent () {
-    console.log(textAreaEl);
+function saveAndResetTextContent(event) {
+
+    let currentTxtArea = $(event.target).parents().children("div").children("textarea");
+    let inputEl = $('<p>');
+    let inputVal = currentTxtArea.val();
+
+    localStorage.setItem("input", inputVal);
+    inputEl.text(inputVal);
+    currentTxtArea.append(inputEl);
+
+
+
 }
 
 displayCurrentDay();
+timeBlockColorDisplay();
 
 // onclick event to save desired text content in text area and local storage
-saveBtn.on("click", saveContent);
+saveBtn.on("click", saveAndResetTextContent);
+

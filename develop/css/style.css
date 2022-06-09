@@ -6,10 +6,9 @@ body {
 
 textarea {
     background: transparent;
-    border: none;
+    border: 10px solid black;
     resize: none;
     color: #000000;
-    border-left: 1px solid black;
     position: relative;
     bottom: 8.5px;
     height: 80%;
