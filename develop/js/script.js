@@ -62,8 +62,6 @@ function saveAndResetTextContent(event) {
     inputEl.text(inputVal);
     currentTxtArea.append(inputEl);
 
-
-
 }
 
 displayCurrentDay();
