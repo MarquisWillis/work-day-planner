@@ -4,7 +4,7 @@
 
 This project used jQuery to build a functioning app planner that shortens the number of tasks required to run the application.
 
-Link to deplayed application: https://marquiswillis.github.io/code-quiz/
+Link to deplayed application: https://marquiswillis.github.io/work-day-planner/
 
 ## Usage
 
